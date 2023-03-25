@@ -4,11 +4,12 @@
 std::vector<int> solution(std::vector<int> &A, int K){
 
     std::vector<int> B(A.size());
-    for (int i = 0; i < A.size(); i++){
-        B[(i+K)%A.size()] = A[i];
-        
-    }
+    if(K != A.size()){
 
+        for (int i = 0; i < A.size(); i++){
+            B[(i+K)%A.size()] = A[i];
+        }
+    }
     return B;
 }
 
