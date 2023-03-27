@@ -4,17 +4,21 @@
 
 int solution(int x, std::vector<int> &A){
 
-    std::vector<int> B(x,0); // wektor o rozmiwarze x i wypłęniony -1
+    std::vector<int> B(x,-1); // wektor o rozmiwarze x i wypłęniony -1
 
     for (int i = 0; i<A.size(); i++){
-        if(A[i] <= x && B[A[i]-1] == 0)// jeżeli A mieści się w x i wcześniej nie było liścia na tej pozycji
-            B[A[i]-1] = 1; // wpisujemy, kiedy wystąpiło 
-        int test = std::accumulate(B.begin(), B.end(), 0); //sumujemy wszystkie jedynki w B
-        if( test== x ) // jeżeli cały wektor B jest zapełniony 1 
-            return i; //w tej sekundzie żaba przeskoczy
+        if(A[i] <= x && B[A[i]-1] == -1)// jeżeli A mieści się w x i wcześniej nie było liścia na tej pozycji
+            B[A[i]-1] = i; // wpisujemy, kiedy wystąpiło 
     }
+    int max = 0; 
+        for (int i = 0; i<B.size(); i++){
+            if(B[i]== -1)
+                return -1;
+            if(max<B[i])
+                max = B[i];
+        }
 
-    return -1;
+    return max;
 }
 
 int main(){
