@@ -2,7 +2,7 @@
 #include<cmath>
 
 int solution(int x, int y, int d){
-    float temp = (y-x);
+    long double temp = (y-x);
     temp /= d;
     int MinimalAmountOfJumps = std::ceil(temp);
     return MinimalAmountOfJumps;
