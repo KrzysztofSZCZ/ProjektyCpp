@@ -14,11 +14,7 @@ int solution(std::vector<int> &A){
     }
 
     return 1;
-
-
 }
-
-
 
 int main(){
     std::vector<int> vec = {4,1,5,3,2};
