@@ -17,17 +17,16 @@ int solution(std::vector<int> &A){
     if(!isOne)
         return 1;
 
-    for (int i = 0; i < A.size() - 1; i++ ){
+    for (int i = 0; i < A.size(); i++ ){
         if(A[i] > 0 && A[i+1] != A[i] + 1 && A[i+1] != A[i]) //czy jest doatnia, czy kolejna o jeden większa lub równa 
             return A[i] + 1;
     }
-
 
 }
 
 int main(){
 
-    std::vector<int> Vec = {3,3,4,6,7,8,-12};
+    std::vector<int> Vec = {1,2,3};
     std::cout << solution(Vec);
 
     return 0;
