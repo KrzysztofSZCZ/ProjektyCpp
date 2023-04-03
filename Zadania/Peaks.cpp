@@ -27,7 +27,7 @@ int solution(std::vector<int> &A){
         int N = A.size()/k; // rozmiar kawałka 
 
         int PeaksSoFar = 0;
-        int* i = 0;
+        int i = 0;
 
         for(i = 0; i < Peak.size(); i++){
 
@@ -37,7 +37,7 @@ int solution(std::vector<int> &A){
             else if((i+1)%N == 0)
                 PeaksSoFar = 0; //koniec kawałka ale był peak, więc badamy nowy 
         }
-        if(*i >= A.size()) //każdy kawałek ma conajmniej jeden slice 
+        if(i >= A.size()) //każdy kawałek ma conajmniej jeden slice 
             return k;
         
     }
