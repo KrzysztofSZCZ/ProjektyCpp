@@ -11,7 +11,7 @@ int solution(std::vector<int> &A){
     s.insert(std::abs(A[i]));
    }
 
-    return s.size();
+    return s.size(); //to działa dlatego, że set nie wpuści kolejnej takiej samej wartości 
 
 }
 
